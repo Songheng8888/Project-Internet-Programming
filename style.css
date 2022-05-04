@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.74),rgba(0,0,0,0.75)),url(/asset/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    background-color: rgb(2, 51, 51);
+    width: 100%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+}
+.logo{
+    width: 120px;
+    color: white;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a{
+    text-decoration: solid;
+    color: white;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background:blue;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+.navbar ul li:hover::after{
+    width: 100%;
+
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    font-weight: bold;
+    border: 2px solid blue;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position:relative;
+    overflow: hidden;
+}
+
+span{
+    background: blue;
+    height: 100%;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+
+/*--About US--*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+
+html {
+  font-family: "Montserrat";
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1f26;
+}
+.containerabout {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+.left {
+  width: 50%;
+  height: 600px;
+  background: url(https://images.unsplash.com/photo-1542662565-7e4b66bae529?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80)
+    no-repeat center / cover;
+  border-radius: 8px;
+}
+.right {
+  width: 50%;
+  min-height: 400px;
+  background-color: #303137;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 8px;
+  color: white;
+  margin-left: -150px;
+}
+.right h1 {
+  font-size: 40px;
+  font-weight: lighter;
+}
+.right p {
+  margin: 20px 0;
+  font-weight: 500;
+  line-height: 25px;
+}
+.right a {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  padding: 20px 30px;
+  display: inline-block;
+  letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .containerabout {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 20px;
+  }
+  .left {
+    width: 100%;
+    height: 400px;
+  }
+  .right {
+    width: 90%;
+    margin: 0;
+    margin-top: -100px;
+  }
+}
+/*-- View --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+.container .heading{
+  text-align: center;
+  padding:10px;
+  color:#333;
+  font-size: 35px;
+  border-bottom: 3px solid #333;
+}
+
+.container .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:20px;
+  padding:20px 9%;
+  background: #eee;
+}
+
+.container .box-container.active{
+  padding-bottom: 150px;
+}
+
+.container .box-container .box{
+  border-radius: 10px;
+  background:#fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  padding:15px;
+  cursor: pointer;
+}
+
+.container .box-container .box .image{
+  height:400px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.container .box-container .box .image img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+
+.container .box-container .box .image .play{
+  position: absolute;
+  top:0; left:0;
+  height: 100%;
+  width:100%;
+  background: rgba(0,0,0,.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  display: none;
+}
+
+.container .box-container .box:hover .image .play{
+  display: grid;
+}
+
+.container .box-container .box .image .play i{
+  font-size: 100px;
+  color:#fff;
+}
+
+.container .box-container .box .content{
+  padding-top: 15px;
+}
+
+.container .box-container .box .content h3{
+  font-size: 20px;
+  color:#333;
+}
+
+
+
+@media (max-width:768px) {
+  .container .box-container{
+    padding:20px;
+  }
+}
+
+@media (max-width:450px) {
+  .container .box-container{
+    grid-template-columns: 1fr;
+  }
+
+  .container .box-container .box .image{
+    height: 300px;
+  }
+}
+
+/*-- Contact --*/
+
+.contact{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(/asset/banner.jpg);
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+}
+.contact h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding:0;
+
+}
+/* Footer */
+.footer{
+            
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    background-color: rgb(66, 63, 63);
+    color:aliceblue   
+}
+.display{
+display: flex;
+justify-content: space-between;
+padding-top: 20px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.icon a{
+   color: aliceblue;
+   text-decoration: none;
+    font-size: 40px;
+}
+img{
+  width: 20px;
+  height: 20px;
+  color: aliceblue;
+  text-decoration: none;
+}
+.icon{
+   padding-top: 50px;
+}
+#box1 input{
+    background-color: black;
+    color: aliceblue;
+    height: 30px;
+}
+#box2 input {
+   height: 35px;
+}
+.display1{
+   display: flex;
+   padding-top: 40px;
+   flex-direction: row;
+}
